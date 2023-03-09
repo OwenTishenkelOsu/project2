@@ -31,30 +31,31 @@ def updateCenter(points):
     return meanPoint;
  
 bases = [2, 4, 7, 11, 16];
-base = 0;
 n = [0.01 , 0.02]
+for rate in n:
+    for base in range(len(bases)):
 
+        data= dataPoints();
+        centers= np.zeros((bases[base],2))
+        for i in range(bases[base]):
+            centers[i]=  data[rand.randint(0, len(data)-1)][0 : 2]
+        distanceCenter = np.zeros((len(data),bases[base]))
+        centerUpdated = True;
+        while(centerUpdated):
+            centerUpdated = False;
+            for point in range(len(data)):
+                data[point][2], distanceCenter[point,0] = whichGaussianCenter(centers,data[point][0:2])
+                distanceCenter[point,1] = data[point][2];
+            for i in range(bases[base]):
+                centerPoints = [];
+                for point in data:
+                    if(point[2] ==i ):
+                        centerPoints.append(point[0:2]);
+                newCenter=updateCenter(centerPoints);
+                if(newCenter[0] != centers[i][0] or newCenter[1] != centers[i][1] ):
+                    centerUpdated = True;
+                    centers[i][0:2] = newCenter[0:2];
 
-data= dataPoints();
-centers= np.zeros((bases[base],2))
-for i in range(bases[base]):
-    centers[i]=  data[rand.randint(0, len(data)-1)][0 : 2]
-distanceCenter = np.zeros((len(data),bases[base]))
-centerUpdated = True;
-while(centerUpdated):
-    centerUpdated = False;
-    for point in range(len(data)):
-        data[point][2], distanceCenter[point,0] = whichGaussianCenter(centers,data[point][0:2])
-        distanceCenter[point,1] = data[point][2];
-    for i in range(bases[base]):
-        centerPoints = [];
-        for point in data:
-            if(point[2] ==i ):
-                centerPoints.append(point[0:2]);
-        newCenter=updateCenter(centerPoints);
-        if(newCenter[0] != centers[i][0] or newCenter[1] != centers[i][1] ):
-            centerUpdated = True;
-            centers[i][0:2] = newCenter[0:2];
 
     
 
