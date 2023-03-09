@@ -122,7 +122,7 @@ for rate in n:
         plt.plot(functionOutput[:,0],functionOutput[:,1], label = "RBF Function")
         plt.plot(data[:,0],data[:,1], "r.")
         plt.legend()
-        plt.title('Learning Curve of Base Number: '+str(bases[base])+" and Learning Rate: "+str(rate)+" with Differing widths");
+        plt.title('Graph of Base Number: '+str(bases[base])+" and Learning Rate: "+str(rate)+" with Differing widths");
         plt.show()
 
 for rate in n:
@@ -177,11 +177,11 @@ for rate in n:
         plt.figure(base);
         sampleFunctionVals= sampleFunction();
         test = data[:,0:2];
+        plt.title('Graph of Base Number: '+str(bases[base])+" and Learning Rate: "+str(rate)+" with the same width");
         plt.plot(sampleFunctionVals[:,0],sampleFunctionVals[:,1],label = "Original Function" )
         plt.plot(functionOutput[:,0],functionOutput[:,1], label = "RBF Function")
         plt.plot(data[:,0],data[:,1], "r.")
-        plt.legend()
-        plt.title('Learning Curve of Base Number: '+str(bases[base])+" and Learning Rate: "+str(rate)+" with the same width");
+        plt.legend()     
         plt.show()
         
 

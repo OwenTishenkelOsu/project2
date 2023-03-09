@@ -35,6 +35,31 @@
       <Architecture>X64</Architecture>
     </Interpreter>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pictures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pictures\base11learn1diffwidth.png" />
+    <Content Include="pictures\base11learn1samewidth.png" />
+    <Content Include="pictures\base11learn2diffwidth.png" />
+    <Content Include="pictures\base11learn2samewidth.png" />
+    <Content Include="pictures\base16learn1diffwidth.png" />
+    <Content Include="pictures\base16learn1samewidth.png" />
+    <Content Include="pictures\base16learn2diffwidth.png" />
+    <Content Include="pictures\base16learn2samewidth.png" />
+    <Content Include="pictures\base2learn1diffwidth.png" />
+    <Content Include="pictures\base2learn1samewidth.png" />
+    <Content Include="pictures\base2learn2diffwidth.png" />
+    <Content Include="pictures\base2learn2samewidth.png" />
+    <Content Include="pictures\base4learn1diffwidth.png" />
+    <Content Include="pictures\base4learn1samewidth.png" />
+    <Content Include="pictures\base4learn2diffwidth.png" />
+    <Content Include="pictures\base4learn2samewidth.png" />
+    <Content Include="pictures\base7learn1diffwidth.png" />
+    <Content Include="pictures\base7learn1samewidth.png" />
+    <Content Include="pictures\base7learn2diffwidth.png" />
+    <Content Include="pictures\base7learn2samewidth.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
        Visual Studio and specify your pre- and post-build commands in
