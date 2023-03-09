@@ -29,7 +29,15 @@ def updateCenter(points):
     meanPoint = np.sum(points,0);
     meanPoint = meanPoint/len(points);
     return meanPoint;
- 
+def gaussianFunction(x,width):
+   return math.exp((-1/(2*width))*x);
+def randWeights(baseNum):
+    weightList = [];
+    for i in range(baseNum):
+        weightList.append(rand.uniform(-1,1));
+    return np.array(weightList);
+
+
 bases = [2, 4, 7, 11, 16];
 n = [0.01 , 0.02]
 for rate in n:
@@ -55,6 +63,23 @@ for rate in n:
                 if(newCenter[0] != centers[i][0] or newCenter[1] != centers[i][1] ):
                     centerUpdated = True;
                     centers[i][0:2] = newCenter[0:2];
+        epochs = 100;
+        widths = np.zeros(bases[base]);
+        averageWidths = [];
+        for i in range(bases[base]):
+            distances = []
+            for distance in range(len(distanceCenter)):
+                if distance[1] == i:
+                    distances.append(distance[0]);
+            if len(distances) >1:
+                widths[i] = varianceCenter(distances);
+            else:
+                averageWidths.append(i);
+        for i in averageWidths:
+            widths[i] = np.sum(widths)/(len(widths)- len(averageWidths))
+        weights= randWeights(bases[base]);
+        for epoch in range(epochs):
+
 
 
     
